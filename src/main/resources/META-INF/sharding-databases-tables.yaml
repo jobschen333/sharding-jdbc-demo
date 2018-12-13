@@ -10,6 +10,7 @@ dataSources:
     username: root
     password:
 
+#分库分表
 shardingRule:
   tables:
     t_order: 
@@ -17,6 +18,7 @@ shardingRule:
       tableStrategy: 
         inline:
           shardingColumn: user_id
+          #分表策略 理论上这里的分表策略可以自定义
           algorithmExpression: t_order_${(user_id.longValue()/2).longValue() % 2}
       keyGeneratorColumnName: order_id
     t_order_item:

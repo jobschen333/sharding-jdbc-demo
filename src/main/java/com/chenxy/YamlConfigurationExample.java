@@ -37,13 +37,13 @@ import java.sql.SQLException;
  */
 public class YamlConfigurationExample {
     /** 分库  */
-    private static ShardingType type = ShardingType.SHARDING_DATABASES;
+    //private static ShardingType type = ShardingType.SHARDING_DATABASES;
     /** 分表 */
     //private static ShardingType type = ShardingType.SHARDING_TABLES;
      /** 分库分表 */
       //private static ShardingType type = ShardingType.SHARDING_DATABASES_AND_TABLES;
     /**  读写分离 */
-    //private static ShardingType type = ShardingType.MASTER_SLAVE;
+    private static ShardingType type = ShardingType.MASTER_SLAVE;
     /** 分库分表加读写分离*/
     //private static ShardingType type = ShardingType.SHARDING_MASTER_SLAVE;
     
@@ -83,7 +83,7 @@ public class YamlConfigurationExample {
         CommonService commonService = getCommonService(dataSource);
         commonService.initEnvironment();
         commonService.processSuccess();
-        commonService.cleanEnvironment();
+        //commonService.cleanEnvironment();
     }
     
     private static CommonService getCommonService(final DataSource dataSource) {

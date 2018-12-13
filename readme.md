@@ -1,0 +1,2 @@
+最简单sharding-jdbc-demo yaml配置实现
+针对官方demo更加详细的说明
